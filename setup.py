@@ -15,7 +15,7 @@ setup(
     author="Conor L. Mancone",
     author_email="cmancone@gmail.com",
     description="A Flexible Interface for Stellar Population Synthesis Models",
-    long_description=read('README.rst'),
+    long_description=read('README.md'),
     packages=["ezgal"],
     requires=['numpy', 'pyfits', 'scipy'],
     package_data={
