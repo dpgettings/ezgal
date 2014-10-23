@@ -29,9 +29,9 @@ Included in Package
 
 * The two most-commonly used models (according to the `stats page <http://www.baryons.org/ezgal/stats.php#year>`_):
 
-  - bc03_ssp_z_0.02_chab.model
+  - ``bc03_ssp_z_0.02_chab.model``
 
-  - bc03_ssp_z_0.02_salp.model
+  - ``bc03_ssp_z_0.02_salp.model``
 
   We include only these two because the models themselves are fairly large (binary) files, amounting to ~3 GB for the full set. For additional models, see: http://www.baryons.org/ezgal/download.php
 
