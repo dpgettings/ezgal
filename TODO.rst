@@ -2,14 +2,8 @@
 To Do
 =========
 
-
-Required
-++++++++
-
 Sort Term
 ---------
-
-#. Figure out the rest of the ``setup.py`` parameters (especially ``license`` and ``classifiers``)
 
 #. Write some unit tests! Or just any tests at all, really...
 
@@ -32,12 +26,16 @@ Medium Term
 Longer Term
 -----------
 
+- Register with Python Package Index. 
+
 - Clean up inconsistent package usage (e.g. use of ``array``, ``math``, etc.)
 
+- Make compatible with Python 3.x
 
 
-Possible Features
-+++++++++++++++++
+======================
+Feature Ideas
+======================
 
 - Prettification of model specification interface
 
