@@ -1,10 +1,10 @@
 # EzGal: A Flexible Interface for Stellar Population Synthesis Models
 
 ## Authors: 
-#### Conor L. Mancone, Anthony H. Gonzalez
+#### Conor Mancone, Anthony Gonzalez
 
-## Official Project Website: www.baryons.org/ezgal/index.php
 
+### Official Project Website: www.baryons.org/ezgal/index.php
 
 
 #### Description
