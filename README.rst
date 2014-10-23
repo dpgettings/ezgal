@@ -27,7 +27,7 @@ Included in Package
 
 * Effective transmission curves for the filters listed here: http://www.baryons.org/ezgal/filters.php
 
-* The two most-commonly used models (according to the :
+* The two most-commonly used models (according to the `stats page <http://www.baryons.org/ezgal/stats.php#year>`_):
 
   - bc03_ssp_z_0.02_chab.model
 
