@@ -9,11 +9,14 @@ Required
 Sort Term
 ---------
 
-- Figure out the rest of the ``setup.py`` parameters (especially ``license`` and ``classifiers``)
+#. Figure out the rest of the ``setup.py`` parameters (especially ``license`` and ``classifiers``)
 
-- Write script to download model files in addition to those included with repo
+#. Write some unit tests! Or just any tests at all, really...
 
-- Include install info in README
+#. Include install info in README
+
+#. Write script to download model files in addition to those included with repo
+
 
 
 Medium Term
@@ -41,4 +44,3 @@ Possible Features
 - Auto-downloading of models that are not found locally
 
 - [And probably more...]
-
