@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+# encoding: utf-8
 
 import os,utils,re,sfhs,weight,collections,astro_filter_light
 import numpy as np
@@ -90,7 +91,10 @@ class ezgal(object):
 
 		# load additional modules.  Yes, this is strange.  But this way ezgal_light can inherit ezgal.
 		# this is necessary because ezgal_light is intended to work without any of these modules
-		import pyfits,cosmology,astro_filter,csp_integrator
+		import cosmology
+		import astro_filter
+		import csp_integrator
+		import pyfits
 		import scipy.integrate as integrate
 		global cosmology
 		global pyfits
@@ -1564,7 +1568,6 @@ class ezgal(object):
 		fits = pyfits.open( filename )
 
 		# make sure it has some filters
-		if not( fits[0].header.has_key( 'nfilters' ) ): raise ValueError( 'Cannot extract filters from specified file because it has none!' )
 		if fits[0].header['nfilters'] == 0: raise ValueError( 'Cannot extract filters from specified file because it has none!' )
 
 		nfilters = fits[0].header['nfilters']
@@ -1810,10 +1813,10 @@ class ezgal(object):
 			self.nages = self.ages.size
 			start_filters = 3
 			# how about masses?
-			if fits[2].header.has_key( 'has_mass' ) and fits[2].header['has_mass']:
+			if 'has_mass' in fits[2].header and fits[2].header['has_mass']:
 				self.set_masses( self.ages, fits[2].data.field('masses'), age_units='yrs', grid=False )
 			# and sfh?
-			if fits[2].header.has_key( 'has_sfh' ) and fits[2].header['has_sfh']:
+			if 'has_sfh' in fits[2].header and fits[2].header['has_sfh']:
 				self.sfh = fits[2].data.field('sfh')
 				self.has_sfh = True
 		else:
@@ -1827,7 +1830,7 @@ class ezgal(object):
 
 		# was filter information included in this model file?
 		# if so, load it and store it in the object
-		if not( fits[0].header.has_key( 'nfilters' ) ): return True
+		if 'nfilters' not in fits[0].header: return True
 		if fits[0].header['nfilters'] == 0: return True
 
 		# set cosmology specified in the model file
@@ -1840,7 +1843,7 @@ class ezgal(object):
 			self.nfilters += 1
 
 		# load any stored models
-		if not( fits[0].header.has_key( 'nzfs' ) ): return True
+		if 'nzfs' not in fits[0].header: return True
 
 		st = start_filters + fits[0].header['nfilters']
 		zfs = []
@@ -2203,7 +2206,7 @@ class ezgal(object):
 		
 		Saves the meta data in the fits header into the ezgal object (if present) """
 
-		if not hdr.has_key( 'has_meta' ) or not hdr['has_meta']: return False
+		if 'has_meta' not in hdr or not hdr['has_meta']: return False
 
 		# loop through all header cards in the header and look for ones with a comment that says 'meta data'
 		self.meta_data = {}
