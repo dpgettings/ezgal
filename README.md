@@ -5,18 +5,18 @@
 
 ####
 
-#### Description
+### Description
 
 EzGal is a tool that takes models of how the SED of a stellar population evolves with time and projects it through filters to calculate magnitude evolution and mass-to-light ratios as a function of redshift. For those familiar with the Bruzual and Charlot (2003) model set, this performs the same function as the program cm_evolution which is distributed with their models. EzGal can read in Bruzual and Charlot binary ised files as well as plain text files, allowing it to work with any model set. You can use it is a strictly command line utility to output text files for later use, or you can call it from python as a module to generate models on the fly. It can store the seds and evolution models in fits files for quick retrieval later. A convenient way to use it is to generate evolution models on a grid of formation redshifts for many filters, store all the calculated models in a single fits file, and then just use that fits file (in conjunction with EzGal) to quickly fetch redshift evolution models for all your gridded formation redshifts and filters. All this takes just a few lines of code.
 
 
-#### Documentation
+### Documentation
 
 * Online Documentation:  http://www.baryons.org/ezgal/manual/
 
 
 
-#### Included in Package
+### Included in Package
 
 * EzGal Software
 * Effective transmission curves for the filters listed here: http://www.baryons.org/ezgal/filters.php
@@ -28,7 +28,7 @@ EzGal is a tool that takes models of how the SED of a stellar population evolves
 
 
 
-#### Citing EzGal
+### Citing EzGal
 
 * Link to Abstract on ADS:  http://adsabs.harvard.edu/abs/2012PASP..124..606M
 * ASCL Entry:  http://ascl.net/1208.021
