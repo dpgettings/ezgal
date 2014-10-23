@@ -16,11 +16,20 @@ setup(
     author_email="cmancone@gmail.com",
     description="A Flexible Interface for Stellar Population Synthesis Models",
     long_description=read('README.rst'),
-    # license="BSD",
     packages=["ezgal"],
-    requires=['numpy', 'pyfits', 'scipy']
-    #requires=['numpy', 'pyfits', 'scipy'],
-    #install_requires=['numpy','pyfits','scipy']
+    requires=['numpy', 'pyfits', 'scipy'],
+    package_data={
+        '': ['*.fits',
+             '*README*',
+             'data/models/*.model',
+             'data/filters/*',
+             'data/refs/*',
+             'scripts/*']}
+
+    # license="BSD",
+    # include_package_data = True
+    # requires=['numpy', 'pyfits', 'scipy'],
+    # install_requires=['numpy','pyfits','scipy']
     # classifiers=[
     #     #"Development Status :: 3 - Alpha",
     #     #"Topic :: Scientific/Engineering :: Visualization",
