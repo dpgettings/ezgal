@@ -2,6 +2,17 @@
 EzGal: A Flexible Interface for Stellar Population Synthesis Models
 =====
 
+Authors
+--------
+
+* `Conor L. Mancone <http://www.mancone.net/>`_
+```````````````````
+
+* `Anthony H. Gonzalez <http://www.astro.ufl.edu/~anthonyhg/>`_
+`````````````````````
+
+
+
 Websites
 --------
 
@@ -35,14 +46,6 @@ Included in Package
 
   We include only these two because the models themselves are fairly large (binary) files, amounting to ~3 GB for the full set. For additional models, see: http://www.baryons.org/ezgal/download.php
 
-
-
-Developers
-----------
-
-* Conor L. Mancone 
-
-* Anthony H. Gonzalez
 
 
 Citing EzGal
