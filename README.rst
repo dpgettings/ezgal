@@ -31,7 +31,7 @@ Developers
 Citing EzGal
 -------------
 
-If using EzGal in a research paper, please cite the `EzGal paper <http://adsabs.harvard.edu/abs/2012PASP..124..606M>`_ published in PASP. We have included BibTeX entries for both the paper and the Astrophysics Source Code Library entry in the file `ezgal_refs.bib`.
+If using EzGal in a research paper, please cite the `EzGal paper <http://adsabs.harvard.edu/abs/2012PASP..124..606M>`_ published in PASP. We have included BibTeX entries for both the paper and the Astrophysics Source Code Library entry in the file `ezgal_refs.bib <https://github.com/dpgettings/ezgal/blob/master/ezgal_refs.bib>`_.
 
 Additionally, as explained `here <http://www.baryons.org/ezgal/download.php#citing>`_, the magnitude evolution calcualations provided by EzGal are only possible because someone else has gone through effort of generating stellar evolution models. By using EzGal you are making use of multiple data products: EzGal itself, as well as whatever model sets you choose to use. Therefore it is important that you cite the paper which describes the model sets you are using. Here are the appropriate references:
 
