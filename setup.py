@@ -24,7 +24,7 @@ setup(
              'data/models/*.model',
              'data/filters/*',
              'data/refs/*',
-             'scripts/*']}
+             'scripts/*']},
 
     # license="BSD",
     # include_package_data = True
