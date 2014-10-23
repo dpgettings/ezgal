@@ -9,6 +9,8 @@ Required
 Sort Term
 ---------
 
+- **Fix `pyfits` problems!!**
+
 - Figure out the rest of the `setup.py` parameters (especially `license` and `classifiers`)
 
 - Write script to download model files in addition to those included with repo
@@ -19,9 +21,11 @@ Sort Term
 Medium Term
 -----------
 
-- Fix fix pyfits problems (maybe even convert to astropy.fits)
+- Change `pyfits` to `astropy.fits`
 
 - PEP8
+
+- General code-style improvements
 
 
 Longer Term
