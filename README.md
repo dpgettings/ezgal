@@ -40,7 +40,7 @@ Additionally, as explained [here](http://www.baryons.org/ezgal/download.php#citi
 
 Model                    | Reference
 :------------------------ | :------------------------------------------------------------------------------------------------------------------
-Pॆअआ�GASE.2                 | [Fioc and Rocca-Volmerange 1997 (A&A, 326, 950)](http://adsabs.harvard.edu/abs/1997A%26A...326..950F)           
+PEGASE.2                 | [Fioc and Rocca-Volmerange 1997 (A&A, 326, 950)](http://adsabs.harvard.edu/abs/1997A%26A...326..950F)           
 Bruzual and Charlot 2003 | [Bruzual and Charlot 2003 (MNRAS, 344, 1000)](http://adsabs.harvard.edu/abs/2003MNRAS.344.1000B)                
 Charlot and Bruzual 2007 | Currently unpublished.  Please reference as an updated BC03 model.                                                
 Maraston 2005            | [Maraston et al. 2005 (MNRAS, 362, 799)](http://adsabs.harvard.edu/abs/2005MNRAS.362..799M)                     
