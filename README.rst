@@ -6,7 +6,7 @@ Authors:
 --------
 
 `Conor L. Mancone <http://www.mancone.net/>`_, `Anthony H. Gonzalez <http://www.astro.ufl.edu/~anthonyhg/>`_
-````````````````````````````````````````````````````````````````````````````````````````````````````````````
++++++++++++++++
 
 
 Websites
