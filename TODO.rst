@@ -9,8 +9,6 @@ Required
 Sort Term
 ---------
 
-- **Fix ``pyfits`` problems!!**
-
 - Figure out the rest of the ``setup.py`` parameters (especially ``license`` and ``classifiers``)
 
 - Write script to download model files in addition to those included with repo
@@ -25,7 +23,7 @@ Medium Term
 
 - PEP8
 
-- General code-style improvements
+- General coding style improvements
 
 
 Longer Term
