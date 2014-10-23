@@ -13,16 +13,17 @@ setup(
     name="EZGal",
     version="1.0.0",
     author="Conor L. Mancone",
-    # author_email="",
-    description="",
-    long_description=read('README.md'),
+    author_email="cmancone@gmail.com",
+    description="A Flexible Interface for Stellar Population Synthesis Models",
+    long_description=read('README.rst'),
     # license="BSD",
     packages=["ezgal"]
-    requires=['numpy'],  # scipy not required, but strongly recommended
-    install_requires=['numpy','pyfits','scipy']
-    classifiers=[
-        "Development Status :: 3 - Alpha",
-        "Topic :: Scientific/Engineering :: Visualization",
-        # "License :: OSI Approved :: BSD License",
-        ]
+    requires=['numpy', 'pyfits', 'scipy']
+    #requires=['numpy', 'pyfits', 'scipy'],
+    #install_requires=['numpy','pyfits','scipy']
+    # classifiers=[
+    #     #"Development Status :: 3 - Alpha",
+    #     #"Topic :: Scientific/Engineering :: Visualization",
+    #     # "License :: OSI Approved :: BSD License",
+    #     ]
 )
