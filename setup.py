@@ -1,15 +1,20 @@
 #!/usr/bin/env python
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 
 import os
-from setuptools import setup
 
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 
-setup(
+settings = dict()
+
+settings.update(
     name="EZGal",
     version="1.0.0",
     author="Conor L. Mancone",
@@ -17,7 +22,7 @@ setup(
     description="A Flexible Interface for Stellar Population Synthesis Models",
     long_description=read('README.md'),
     packages=["ezgal"],
-    requires=['numpy', 'pyfits', 'scipy'],
+    requires=['numpy', 'pyfits', 'scipy','requests'],
     package_data={
         '': ['*.fits',
              '*README*',
@@ -37,3 +42,7 @@ setup(
         "Programming Language :: Python :: 2 :: Only"
         ]
 )
+
+
+
+setup(**settings)
