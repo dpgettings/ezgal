@@ -35,10 +35,10 @@ class Cosmology:
 
         # Functions for integration
         # Eqn 14 from Hogg, adding in 'w' to Ol.
-        self.Efunc = lambda z, self=self : num.sqrt( (self.Om   * (1. + z)**3 +                 \
+        self.Efunc = lambda z, self=self : num.sqrt((self.Om   * (1. + z)**3 +                 \
                                                        self.Ok() * (1. + z)**2 +                 \
                                                        self.Ol   * (1. + z)**(3 * (1. + self.w)) \
-                                                       )**-1 )
+                                                      )**-1)
         # Eqn 30
         self.Tfunc = lambda z, self=self : self.Efunc(z) / (1. + z)
                                            
@@ -135,7 +135,7 @@ class Cosmology:
         Ok  = self.Ok()
         Dh  = self.Dh()
 
-        return 1. / (1 + z2) * ( Dm2 * num.sqrt(1. + Ok * Dm1**2 / Dh**2) - Dm1 * num.sqrt(1. + Ok * Dm2**2 / Dh**2) )
+        return 1. / (1 + z2) * (Dm2 * num.sqrt(1. + Ok * Dm1**2 / Dh**2) - Dm1 * num.sqrt(1. + Ok * Dm2**2 / Dh**2))
 
 
     # Luminosity distance
@@ -149,37 +149,37 @@ class Cosmology:
         return 5. * num.log10(self.Dl(z) / self.pc / 10)
 
     # added 12/20/11 - Conor Mancone
-    def Tu( self, s=False, yr=False, myr=False, gyr=False ):
+    def Tu(self, s=False, yr=False, myr=False, gyr=False):
         return self.Th() * integrate.quad(self.Tfunc, 0, inf)[0] * self.timeConversion(s=s, yr=yr, myr=myr, gyr=gyr)
 
     # added 12/16/11 - Conor Mancone
     # returns conversion from arcseconds to physical angular size
     def scale(self, z, cm=False, meter=False, pc=False, kpc=False, mpc=False):
-        return math.tan( 1.0/3600*math.pi/180 )*self.Da( z, cm=cm, meter=meter, pc=pc, kpc=kpc, mpc=mpc )
+        return math.tan(1.0/3600*math.pi/180)*self.Da(z, cm=cm, meter=meter, pc=pc, kpc=kpc, mpc=mpc)
 
     # added 12/05/11 - Conor Mancone  Ages should be in years
     def GetZ(self, incoming_ages, zf):
 
         # deal with incoming scalar values
         is_scalar = False
-        if len( num.asarray( incoming_ages ).shape ) == 0:
-            incoming_ages = num.asarray( [incoming_ages] )
+        if len(num.asarray(incoming_ages).shape) == 0:
+            incoming_ages = num.asarray([incoming_ages])
         else:
-            incoming_ages = num.asarray( incoming_ages )
+            incoming_ages = num.asarray(incoming_ages)
 
         # there is no cosmology routine to calculate redshift given formation redshift and age, so we must work the problem backwards.
         # Make a semi-regular grid of zs, calculate age given zf, and then interpolate on that.
 
         # Keep track of zfs we've looked up and their stored interpolation data
-        if not hasattr( self, 'lookup_zfs' ):
+        if not hasattr(self, 'lookup_zfs'):
             self.lookups = []
-            self.lookup_zfs = num.array( [] )
+            self.lookup_zfs = num.array([])
 
         # if we have looked up this formation redshift before then figure out where it is in the lookups array
         fetched = False
-        if len( self.lookup_zfs ):
-            ind = num.abs( self.lookup_zfs - zf ).argmin()
-            if num.abs( self.lookup_zfs - zf )[ind] < self.lookup_tol:
+        if len(self.lookup_zfs):
+            ind = num.abs(self.lookup_zfs - zf).argmin()
+            if num.abs(self.lookup_zfs - zf)[ind] < self.lookup_tol:
                 ages = self.lookups[ind]['ages']
                 zs = self.lookups[ind]['zs']
                 fetched = True
@@ -189,27 +189,27 @@ class Cosmology:
 
             # make a list of redshifts/ages out to zf.
             # use finer sampling at low redshift.  The details aren't physically motivated - so sue me.
-            zs = num.arange( 0.0, 0.01, 0.001 )
-            if zf >= 0.01: zs = num.append( zs, num.arange( 0.01, num.min( [0.1, zf+1e-5] ), 0.005 ) )
-            if zf >= 0.1:  zs = num.append( zs, num.arange( 0.1, num.min( [2.0, zf+1e-5] ), 0.025 ) )
-            if zf >= 2.0:  zs = num.append( zs, num.arange( 2.0, zf+1e-5, 0.1 ) )
+            zs = num.arange(0.0, 0.01, 0.001)
+            if zf >= 0.01: zs = num.append(zs, num.arange(0.01, num.min([0.1, zf+1e-5]), 0.005))
+            if zf >= 0.1:  zs = num.append(zs, num.arange(0.1, num.min([2.0, zf+1e-5]), 0.025))
+            if zf >= 2.0:  zs = num.append(zs, num.arange(2.0, zf+1e-5, 0.1))
 
             # reverse so that age is monotonically increasing
             zs = zs[::-1]
 
             # now calculate ages for all those redshifts given formation redshift
-            ages = num.array( [ self.Tl( zf, yr=True ) - self.Tl( z, yr=True ) for z in zs ] )
+            ages = num.array([self.Tl(zf, yr=True) - self.Tl(z, yr=True) for z in zs])
 
             # store reversed so age is monotonically increasing
-            self.lookup_zfs = num.append( self.lookup_zfs, zf )
-            self.lookups.append( {'zs': zs, 'ages': ages} )
+            self.lookup_zfs = num.append(self.lookup_zfs, zf)
+            self.lookups.append({'zs': zs, 'ages': ages})
 
         # now use the data in self.lookup_zfs[stored_ind] to do the lookup
         # return nan if the age is out of bounds (i.e. z < 0 or z > zf)
-        outgoing_zs = num.zeros( incoming_ages.size )
+        outgoing_zs = num.zeros(incoming_ages.size)
         outgoing_zs[:] = num.nan
         m = (incoming_ages >= ages.min()) & (incoming_ages <= ages.max())
-        if m.sum(): outgoing_zs[m] = num.interp( incoming_ages, ages, zs )
+        if m.sum(): outgoing_zs[m] = num.interp(incoming_ages, ages, zs)
 
         # all done!
         return outgoing_zs
