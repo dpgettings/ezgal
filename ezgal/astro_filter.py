@@ -14,37 +14,35 @@ class astro_filter(object):
     To specify units of hertz, set units='Hz' (case-insensitive)
     To specify alternate units (for wavelength) see code list in ezgal.utils.to_meters() """
 
-    # -----------------------------------------------------------------------------------------------
-    # cosmo = None            # cosmology object
+    cosmo = None            # cosmology object
     
-    # ls = np.array([])        # wavelengths for filter response curve (angstroms)
-    # vs = np.array([])        # frequencies for filter response curve
-    # diffs = np.array([])        # frequency width of each bin
-    # tran = np.array([])        # fractional transmission
-    # tran_ls = np.array([])    # fractional transmission (corresponding to wavelengths in ls)
-    # npts = 0            # number of points in the transmission curve
-    # ab_flux = 0            # flux of a zero mag ab source through the filter
-    # vega_flux = 0            # flux of vega through the filter
-    # to_vega = 0            # vega_mag = ab_mag + self.to_vega
-    # has_vega = False        # whether or not the vega conversion is calculated
-    # solar = 0            # solar magnitude
-    # has_solar = False        # whether or not the solar magnitude is calculated
+    ls = np.array([])        # wavelengths for filter response curve (angstroms)
+    vs = np.array([])        # frequencies for filter response curve
+    diffs = np.array([])        # frequency width of each bin
+    tran = np.array([])        # fractional transmission
+    tran_ls = np.array([])    # fractional transmission (corresponding to wavelengths in ls)
+    npts = 0            # number of points in the transmission curve
+    ab_flux = 0            # flux of a zero mag ab source through the filter
+    vega_flux = 0            # flux of vega through the filter
+    to_vega = 0            # vega_mag = ab_mag + self.to_vega
+    has_vega = False        # whether or not the vega conversion is calculated
+    solar = 0            # solar magnitude
+    has_solar = False        # whether or not the solar magnitude is calculated
 
-    # # filter properties, standard definitions taken from:
-    # # [1] http://www.stsci.edu/hst/wfpc2/documents/handbook/cycle17/ch6_exposuretime2.html#480221
-    # # [2] http://www.stsci.edu/hst/wfc3/documents/handbooks/currentIHB/c06_uvis06.html#57
-    # mean = 0.0            # mean wavelength (angstroms, [1])
-    # pivot = 0.0            # pivot wavelength (angstroms, [1])
-    # average = 0.0            # average wavelength (angstroms, [1])
-    # sig = 0.0            # effective dimensionless gaussian width ([1])
-    # width = 0.0            # effective width of bandpass (angstroms, [1])
-    # equivalent_width = 0.0        # equivalent width (angstroms, [2])
-    # rectangular_width = 0.0        # rectangular width (angstroms, [2])
+    # filter properties, standard definitions taken from:
+    # [1] http://www.stsci.edu/hst/wfpc2/documents/handbook/cycle17/ch6_exposuretime2.html#480221
+    # [2] http://www.stsci.edu/hst/wfc3/documents/handbooks/currentIHB/c06_uvis06.html#57
+    mean = 0.0            # mean wavelength (angstroms, [1])
+    pivot = 0.0            # pivot wavelength (angstroms, [1])
+    average = 0.0            # average wavelength (angstroms, [1])
+    sig = 0.0            # effective dimensionless gaussian width ([1])
+    width = 0.0            # effective width of bandpass (angstroms, [1])
+    equivalent_width = 0.0        # equivalent width (angstroms, [2])
+    rectangular_width = 0.0        # rectangular width (angstroms, [2])
 
-    # nzfs = 0            # number of formation redshifts that have been gridded
-    # zfs = np.array([])        # list of formation redshifts that have been gridded
-    # zf_grids = []            # list of zf_grid objects
-    # -----------------------------------------------------------------------------------------------
+    nzfs = 0            # number of formation redshifts that have been gridded
+    zfs = np.array([])        # list of formation redshifts that have been gridded
+    zf_grids = []            # list of zf_grid objects
 
     # tolerance for determining whether a given zf matches a stored zf
     # the tolerance is typical set by ezgal after creating a new astro filter
